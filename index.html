@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Меню — СушиТайм, Аргун</title>
+  <meta name="description" content="Меню СушиТайм: роллы, сеты, пицца и горячие блюда. Доставка по Аргуну и самовывоз.">
+  <link rel="stylesheet" href="menu.css?v=6">
+  <script defer src="data/rolls-cold.js"></script>
+  <script defer src="data/rolls-hot.js"></script>
+  <script defer src="data/drinks.js"></script>
+  <script defer src="data/kitchen.js"></script>
+  <script defer src="menu.js?v=6"></script>
+</head>
+<body>
+  <header class="shell top" id="top" tabindex="-1"><span class="brand">СушиТайм</span><button class="cart-trigger" type="button" aria-haspopup="dialog" hidden>Корзина <span id="cart-count">0</span></button></header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Роллы и не только <span>в Аргуне</span></h1>
+      <p>Роллы, сеты, пицца и горячие блюда. Доставка по Аргуну и самовывоз.</p>
+      <a class="hero-action" href="#menu">Смотреть меню <span aria-hidden="true">↓</span></a>
+    </section>
+    <section class="menu" id="menu" aria-labelledby="menu-title" tabindex="-1">
+      <h2 id="menu-title">Меню</h2>
+      <nav class="menu-links" id="menu-links" aria-label="Разделы меню"></nav>
+      <div class="sections" id="sections"></div>
+      <noscript>Включите JavaScript, чтобы увидеть меню.</noscript>
+    </section>
+  </main>
+  <button class="cart-trigger cart-float" type="button" aria-haspopup="dialog" hidden>Корзина · <span id="cart-quick-total"></span></button>
+  <a class="back-top" id="back-top" href="#top" aria-label="Наверх" hidden>↑</a>
+  <a class="menu-quick" id="menu-quick" href="#menu" aria-label="К разделам меню" hidden>Меню</a>
+  <div class="sr-only" id="cart-status" role="status"></div>
+  <dialog id="cart" aria-labelledby="cart-title">
+    <div class="cart-head"><h2 id="cart-title">Корзина</h2><form method="dialog"><button type="submit" aria-label="Закрыть корзину" autofocus>×</button></form></div>
+    <p id="cart-empty">В корзине пока ничего нет.</p>
+    <ul id="cart-items"></ul>
+    <div id="cart-checkout" hidden>
+      <p class="cart-total">Сумма блюд: <strong id="cart-total"></strong></p>
+      <fieldset><legend>Как получите заказ?</legend>
+        <label><input type="radio" name="fulfillment" value="Доставка по Аргуну" checked> Доставка</label>
+        <label><input type="radio" name="fulfillment" value="Самовывоз"> Самовывоз</label>
+      </fieldset>
+      <p>Отправьте сообщение в WhatsApp. Мы подтвердим наличие, время и итоговую стоимость в чате.</p>
+      <a id="cart-order" class="hero-action" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
+    </div>
+  </dialog>
+</body>
+</html>
